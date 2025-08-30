@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDAO {
 
-    @Insert("INSERT INTO user (username, nickname, password, email, address, register_time, is_valid)" +
+    @Insert("INSERT INTO user (username, nickname, password, email, address, gender, register_time, is_valid)" +
             "VALUES (#{username}, #{nickname}, #{password}, #{email}, #{address}, #{gender}, #{registerTime}, #{isValid})")
     void insert(UserDTO userDTO);   // implementation as been done by MyBatis framework
 
