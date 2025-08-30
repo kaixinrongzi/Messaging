@@ -65,7 +65,7 @@ public class UserService {
         // insert the user into database
         this.userDAO.insert(userDTO);
 
-        // generate validation code for this user
+        // generate a validation code for this user
         UserDTO selectedUserDTO = this.userDAO.selectByUsername(username);
 
         String validationCode = RandomStringUtils.secure().nextNumeric(6);
