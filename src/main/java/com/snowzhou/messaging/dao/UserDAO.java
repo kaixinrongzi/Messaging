@@ -15,13 +15,13 @@ public interface UserDAO {
             "VALUES (#{username}, #{nickname}, #{password}, #{email}, #{address}, #{gender}, #{registerTime}, #{isValid})")
     void insert(UserDTO userDTO);   // implementation as been done by MyBatis framework
 
-    @Select("SELECT * FROM user WHERE username = ${username}")
+    @Select("SELECT * FROM user WHERE username = #{username}")
     UserDTO selectByUsername(String username);
 
-    @Update("UPDATE user SET is_valid = 1 WHERE id = ${userId}")
+    @Update("UPDATE user SET is_valid = 1 WHERE id = #{userId}")
     void updateToValid(int userId);
 
-    @Update("UPDATE user SET login_token = ${loginToken}, last_login_time = #{lastLoginTime})")
+    @Update("UPDATE user SET login_token = #{loginToken}, last_login_time = #{lastLoginTime})")
     void login(int userId, String loginToken, Date lastLoginTime);
 
     @Select("SELECT * FROM user WHERE login_token = #{loginToken}")
