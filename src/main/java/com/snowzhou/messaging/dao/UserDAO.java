@@ -3,10 +3,7 @@ package com.snowzhou.messaging.dao;
 import java.util.Date;
 
 import com.snowzhou.messaging.dto.UserDTO;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 // data access object
@@ -30,6 +27,8 @@ public interface UserDAO {
     @Select("SELECT * FROM user WHERE login_token = #{loginToken}")
     UserDTO selectByLoginToken(String loginToken);
 
+    @Delete("DELETE FROM user")
+    void deleteAll();
 
 
 

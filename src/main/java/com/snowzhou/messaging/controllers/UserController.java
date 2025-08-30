@@ -15,7 +15,7 @@ import java.time.Duration;
 import static org.springframework.http.HttpHeaders.SET_COOKIE;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired
@@ -34,6 +34,7 @@ public class UserController {
     }
 
     // activate
+    @PostMapping("/activate")
     public void activate(@RequestBody ActivateUserRequest activateUserRequest) throws Exception {
         this.userService.activate(activateUserRequest.getUsername(), activateUserRequest.getValidationCode());
     }
