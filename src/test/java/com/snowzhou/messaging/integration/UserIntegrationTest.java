@@ -64,7 +64,7 @@ class UserIntegrationTest {
                     "address": "xcvcxvxcvxcxv"
                 }
                 """;
-        this.mockMvc.perform(post("users/register")
+        this.mockMvc.perform(post("/users/register")
                             .content(requestBody)
                             .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
@@ -84,7 +84,7 @@ class UserIntegrationTest {
                     "address": "xcvcxvxcvxcxv"
                 }
                 """;
-        this.mockMvc.perform(post("users/register")
+        this.mockMvc.perform(post("/users/register")
                         .content(requestBody)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())    // status code == 400
@@ -105,7 +105,7 @@ class UserIntegrationTest {
                     "address": "xcvcxvxcvxcxv"
                 }
                 """;
-        this.mockMvc.perform(post("users/register")
+        this.mockMvc.perform(post("/users/register")
                         .content(requestBody)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());   // status code == 200
@@ -135,7 +135,7 @@ class UserIntegrationTest {
                     "address": "xcvcxvxcvxcxv"
                 }
                 """;
-        this.mockMvc.perform(post("users/register")
+        this.mockMvc.perform(post("/users/register")
                         .content(requestBody)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());   // status code == 200
@@ -150,7 +150,7 @@ class UserIntegrationTest {
                 }
                 """, userValidationCodeDTO.getValidationCode()
         );
-        this.mockMvc.perform(post("users/activate")
+        this.mockMvc.perform(post("/users/activate")
                             .content(requestBody)
                             .contentType(MediaType.APPLICATION_JSON))
                     .andExpect(status().isOk());   // status code == 200
