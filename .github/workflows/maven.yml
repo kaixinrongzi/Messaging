@@ -18,6 +18,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      MAVEN_OPTS: --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
 
     steps:
     - uses: actions/checkout@v4
