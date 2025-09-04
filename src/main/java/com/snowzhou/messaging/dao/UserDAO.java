@@ -24,6 +24,10 @@ public interface UserDAO {
     @Update("UPDATE user SET login_token = #{loginToken}, last_login_time = #{lastLoginTime})")
     void login(int userId, String loginToken, Date lastLoginTime);
 
+    //TODO
+    @Update("UPDATE user SET login_token = #{loginToken}, last_login_time = #{lastLoginTime})")
+    void logout(int userId, String loginToken, Date lastLoginTime);
+
     @Select("SELECT * FROM user WHERE login_token = #{loginToken}")
     UserDTO selectByLoginToken(String loginToken);
 

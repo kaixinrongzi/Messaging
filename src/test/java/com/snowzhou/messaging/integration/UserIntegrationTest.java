@@ -118,6 +118,7 @@ class UserIntegrationTest {
 
         // 3. Test if the user validation code has been inserted the database
         UserValidationCodeDTO userValidationCodeDTO = this.userValidationCodeDAO.selectByUserId(userDTO.getId());
+        assertEquals(userDTO.getId(), userValidationCodeDTO.getId());
         assertEquals(6, userValidationCodeDTO.getValidationCode().length());
     }
 

@@ -158,4 +158,12 @@ public class UserService {
         return EMAIL_PATTERN.matcher(email).matches();
     }
 
+    // send back an empty cookie
+    public void logout(String token) throws Exception {
+        UserDTO userDTO = this.authenticate(token);
+
+
+
+    }
+
 }
